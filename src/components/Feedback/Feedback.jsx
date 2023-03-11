@@ -1,7 +1,7 @@
 import { Component } from "react";
-import Statistics from "components/Statistics/Statistics";
-import FeedbackOptions from "components/FeedbackOptions/FeedbackOptions";
-import Section from "components/Section/Section";
+import Statistics from "components/Statistics";
+import FeedbackOptions from "components/FeedbackOptions";
+import Section from "components/Section";
 
 
 class Feedback extends Component {
@@ -19,6 +19,7 @@ class Feedback extends Component {
     onLeaveFeedback = (evt) => {
         // const options = Object.keys(this.state);
         const currentFeedback = evt.target.textContent;
+        console.log('currentFeedback :>> ', currentFeedback);
         this.setState(prevState => {
             return { [currentFeedback]: prevState[currentFeedback] + 1 };
         })

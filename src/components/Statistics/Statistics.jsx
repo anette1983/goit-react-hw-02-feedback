@@ -1,11 +1,11 @@
 // props add and styles
 
-import Notification from 'components/Notification/Notification';
+import Notification from 'components/Notification';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <div>
-      {good > 0 || neutral > 0 || bad > 0 ? (
+      {good || neutral || bad ? (
         <div>
           <p>
             Good: <span>{good}</span>
