@@ -1,36 +1,45 @@
-// props add and styles
+import PropTypes from 'prop-types';
 
 import Notification from 'components/Notification';
+import StyledText from './Statistics.styled';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <div>
       {good || neutral || bad ? (
         <div>
-          <p>
+          <StyledText>
             Good: <span>{good}</span>
-          </p>
-          <p>
+          </StyledText>
+          <StyledText>
             Neutral: <span>{neutral}</span>
-          </p>
-          <p>
+          </StyledText>
+          <StyledText>
             Bad: <span>{bad}</span>
-          </p>
-          <p>
-            total: <span>{total}</span>
-          </p>
-          <p>
+          </StyledText>
+          <StyledText>
+            Total: <span>{total}</span>
+          </StyledText>
+          <StyledText>
             Positive feedback: <span>{positivePercentage}</span>%
-          </p>
+          </StyledText>
         </div>
       ) : (
         // <Notification message="There is no feedback"></Notification>
         <div>
-          <Notification message="There is no feedback"/>
+          <Notification message="There is no feedback" />
         </div>
       )}
     </div>
   );
+};
+
+Statistics.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.number,
 };
 
 export default Statistics;
